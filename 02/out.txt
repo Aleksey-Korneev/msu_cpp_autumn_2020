@@ -1,0 +1,36 @@
+Test1
+
+Test2
+Start parsing
+Found a string: Text
+Found a number: 123
+Found a string: ExtraText
+Found a number: 2
+Found a string: af
+Found a string: x3vb
+Found a string: 009a
+End parsing
+
+Test3
+Object 'parser' at 0x7fff35ba64b0
+1 tokens found so far
+2 tokens found so far
+3 tokens found so far
+4 tokens found so far
+5 tokens found so far
+6 tokens found so far
+7 tokens found so far
+8 tokens found so far
+All in all found 8 tokens
+
+Test4
+The function's running time will be calculated
+All strings found so far: This 
+All strings found so far: This is 
+All strings found so far: This is an 
+All strings found so far: This is an original 
+All strings found so far: This is an original \ttext 
+All strings found so far: This is an original \ttext ! 
+Parsing took 0.000086 seconds
+
+All tests passed.
