@@ -17,6 +17,6 @@ matrix.o: matrix.hpp matrix.cpp
 
 test.o: test.cpp
 	$(CC) $(FLAGS) -c test.cpp
-    
+
 clean:
 	rm -f *.o
