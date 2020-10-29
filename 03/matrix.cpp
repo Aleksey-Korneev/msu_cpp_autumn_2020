@@ -41,9 +41,6 @@ Matrix::Matrix(const size_t row, const size_t col) :
 Matrix::Matrix(const Matrix& other) : Matrix::Matrix(other.rows, other.columns)
 {
     for (size_t i = 0; i < rows; ++i) {
-        matrix[i].SetArraySize(columns);
-    }
-    for (size_t i = 0; i < rows; ++i) {
         for (size_t j = 0; j < columns; ++j) {
             matrix[i][j] = other.matrix[i][j];
         }
