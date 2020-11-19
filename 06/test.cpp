@@ -22,9 +22,10 @@ struct AnotherUserType {
     }
 };
 
+
 void run_tests()
 {
-    //Test 1. A string with no argument fields
+    //Test 1. A string with no argument fields.
     std::string test_str = "An ordinary string () <>";
     std::string expected_res(test_str);
     std::stringstream res;
@@ -38,7 +39,7 @@ void run_tests()
     assert(res.str() == expected_res);
     res.str(std::string());
     
-    //Test 2. A string with multiple argument fields
+    //Test 2. A string with multiple argument fields.
     test_str = "{2} {3} {1} {4} {0} {5}";
     expected_res = "Hello, world! My name is Aleksey.";
     try {
@@ -51,7 +52,7 @@ void run_tests()
     assert(res.str() == expected_res);
     res.str(std::string());
         
-    //Test 3. A string with user-defined data type with overloaded operator '<<'
+    //Test 3. A string with user-defined data type with overloaded operator '<<'.
     test_str = "int: {0}; double: {1}; char: {2}; string: {3}; UserType: {4}";
     expected_res = "int: 999999; double: 123.456; char: x; string: \"String 1\"; UserType: struct UserType { x = 0; y = 0; }";
     try {
@@ -64,7 +65,7 @@ void run_tests()
     assert(res.str() == expected_res);
     res.str(std::string());
 
-    //Test 4. A string with an extra opening brace
+    //Test 4. A string with an extra opening brace.
     test_str = "Here is one { extra opening brace.";
     expected_res = "Caught an exception (InvalidFormat): Unexpected opening brace.";
     try {
@@ -77,7 +78,7 @@ void run_tests()
     assert(res.str() == expected_res);
     res.str(std::string());
     
-    //Test 5. A string with an extra closing brace
+    //Test 5. A string with an extra closing brace.
     test_str = "H}ere is one extra opening brace.";
     expected_res = "Caught an exception (InvalidFormat): Unexpected closing brace.";
     try {
@@ -90,7 +91,7 @@ void run_tests()
     assert(res.str() == expected_res);
     res.str(std::string());
     
-    //Test 6. A string with a violation of order of braces (case "}{")
+    //Test 6. A string with a violation of order of braces (case "}{").
     test_str = "}1{";
     expected_res = "Caught an exception (InvalidFormat): Unexpected closing brace.";
     try {
@@ -103,7 +104,7 @@ void run_tests()
     assert(res.str() == expected_res);
     res.str(std::string());
     
-    //Test 7. A string with a violation of order of braces (case "{{}}")
+    //Test 7. A string with a violation of order of braces (case "{{}}").
     test_str = "Violated order {{0}}";
     expected_res = "Caught an exception (InvalidFormat): Unexpected opening brace.";
     try {
@@ -116,7 +117,7 @@ void run_tests()
     assert(res.str() == expected_res);
     res.str(std::string());
     
-    //Test 8. A string with an appeal to the argument index out of range
+    //Test 8. A string with an appeal to the argument index out of range.
     test_str = "Only one argument {1}";
     expected_res = "Caught an exception (InvalidFormat): Argument index out of range.";
     try {
@@ -127,9 +128,6 @@ void run_tests()
         res << "Caught an exception (RuntimeError): " << e.what();
     }
     assert(res.str() == expected_res);
-    res.str(std::string());
-    
-    
 }
 
 int main()
