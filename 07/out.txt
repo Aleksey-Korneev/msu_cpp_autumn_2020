@@ -1,0 +1,49 @@
+test1
+Vector: is empty = true, size = 0, capacity = 0
+{}
+
+Vector: is empty = false, size = 10, capacity = 10
+{0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+
+Vector: is empty = false, size = 10, capacity = 10
+{5, 5, 5, 5, 5, 5, 5, 5, 5, 5}
+
+Vector: is empty = false, size = 10, capacity = 10
+{5, 5, 5, 5, 5, 5, 5, 5, 5, 5}
+
+Vector: is empty = false, size = 10, capacity = 10
+{5, 5, 5, 5, 5, 5, 5, 5, 5, 5}
+
+Vector: is empty = false, size = 10, capacity = 10
+{5, 5, 5, 5, 5, 5, 5, 5, 5, 5}
+
+Vector: is empty = false, size = 5, capacity = 5
+{1, 2, 3, 4, 5}
+
+Vector: is empty = false, size = 5, capacity = 5
+{1, 2, 3, 4, 5}
+
+Vector: is empty = true, size = 0, capacity = 0
+{}
+
+Vector: is empty = false, size = 5, capacity = 5
+{1, 2, 3, 4, 5}
+
+Vector: is empty = false, size = 5, capacity = 5
+{1, 2, 3, 4, 5}
+
+Vector: is empty = false, size = 5, capacity = 5
+{1, 2, 3, 4, 5}
+
+
+test2
+Caught an expected exception: Index out of range.
+
+test3
+Vector: is empty = false, size = 15, capacity = 22
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, -1, -1, -1, -1}
+
+Caught an expected exception: No elements to pop.
+
+test4
+All tests passed.
