@@ -1,5 +1,5 @@
 CC = g++
-FLAGS =  -std=gnu++17 -O2 -Wall -Werror -Wextra -pedantic
+FLAGS =  -std=gnu++17 -O2 -Wall -Werror -Wparentheses -Wextra -pedantic
 TARGET = out.exe
 OUTPUT = out.txt
 SOURCE = test.cpp
