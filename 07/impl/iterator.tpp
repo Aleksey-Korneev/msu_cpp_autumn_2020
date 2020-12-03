@@ -105,13 +105,13 @@ Iterator<T>& Iterator<T>::operator-=(difference_type shift)
 template<class T>
 Iterator<T> Iterator<T>::operator+(difference_type shift) const
 {
-    return Iterator(p + is_reverse ? -shift : shift, is_reverse);
+    return Iterator(p + (is_reverse ? -shift : shift), is_reverse);
 }
 
 template<class T>
 Iterator<T> Iterator<T>::operator-(difference_type shift) const
 {
-    return Iterator(p - is_reverse ? -shift : shift, is_reverse);
+    return Iterator(p - (is_reverse ? -shift : shift), is_reverse);
 }
 
 template <class T>
