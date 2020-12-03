@@ -49,11 +49,7 @@ void test1()
     print_vector_info(v7);
     Vector<int> v8(v7.begin(), v7.end());
     print_vector_info(v8);
-    v1 = v1;
-    print_vector_info(v1);
     v1 = v7;
-    print_vector_info(v1);
-    v1 = std::move(v1);
     print_vector_info(v1);
     v1 = std::move(v7);
     print_vector_info(v1);
