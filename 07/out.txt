@@ -23,12 +23,6 @@ Vector: is empty = false, size = 5, capacity = 5
 Vector: is empty = false, size = 5, capacity = 5
 {1, 2, 3, 4, 5}
 
-Vector: is empty = true, size = 0, capacity = 0
-{}
-
-Vector: is empty = false, size = 5, capacity = 5
-{1, 2, 3, 4, 5}
-
 Vector: is empty = false, size = 5, capacity = 5
 {1, 2, 3, 4, 5}
 
