@@ -1,1 +1,41 @@
+Test 1
+test_str     = An ordinary string () <>
+expected_res = An ordinary string () <>
+res          = An ordinary string () <>
+
+Test 2
+test_str     = {2} {3} {1} {4} {0} {5}
+expected_res = Hello, world! My name is Aleksey.
+res          = Hello, world! My name is Aleksey.
+
+Test 3
+test_str     = int: {0}; double: {1}; char: {2}; string: {3}; UserType: {4}
+expected_res = int: 999999; double: 123.456; char: x; string: "String 1"; UserType: struct UserType { x = 0; y = 0; }
+res          = int: 999999; double: 123.456; char: x; string: "String 1"; UserType: struct UserType { x = 0; y = 0; }
+
+Test 4
+test_str     = Here is one { extra opening brace.
+expected_res = Caught an exception (InvalidFormat): Unexpected opening brace.
+res          = Caught an exception (InvalidFormat): Unexpected opening brace.
+
+Test 5
+test_str     = H}ere is one extra closing brace.
+expected_res = Caught an exception (InvalidFormat): Unexpected closing brace.
+res          = Caught an exception (InvalidFormat): Unexpected closing brace.
+
+Test 6
+test_str     = }1{
+expected_res = Caught an exception (InvalidFormat): Unexpected closing brace.
+res          = Caught an exception (InvalidFormat): Unexpected closing brace.
+
+Test 7
+test_str     = Violated order {{0}}
+expected_res = Caught an exception (InvalidFormat): Unexpected opening brace.
+res          = Caught an exception (InvalidFormat): Unexpected opening brace.
+
+Test 8
+test_str     = Only one argument {1}
+expected_res = Caught an exception (InvalidValue): Argument index out of range.
+res          = Caught an exception (InvalidValue): Argument index out of range.
+
 All tests passed.
