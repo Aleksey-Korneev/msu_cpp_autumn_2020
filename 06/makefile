@@ -3,14 +3,14 @@ FLAGS =  -std=gnu++17 -O2 -Wall -Werror -Wextra -pedantic
 TARGET = out.exe
 OUTPUT = out.txt
 SOURCE = test.cpp
-OBJECT_FILES = test.o
+
 all: test clean
 
-test: format
+test: main
 	./$(TARGET) > $(OUTPUT)
 
-format: $(SOURCE)
+main: $(SOURCE) format.hpp impl/format.tpp
 	$(CC) $(FLAGS) -o $(TARGET) $(SOURCE)
 
 clean:
-	rm -f $(OBJECT_FILES) $(TARGET)
+	rm -f *.o $(TARGET)
