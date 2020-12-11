@@ -14,14 +14,6 @@ struct UserType {
     }
 };
 
-struct AnotherUserType {
-    int x;
-    int y;
-    AnotherUserType(int x_, int y_) : x(x_), y(y_)
-    {
-    }
-};
-
 void print_info(const std::string &test_str,
         const std::string &expected_res, const std::string &res)
 {
@@ -132,6 +124,29 @@ void run_tests()
     print_info(test_str, expected_res, res.str());
     assert(res.str() == expected_res);
     res.str(std::string());
+    
+    //Test 9. A string with a non-integer value inside braces
+    test_str = "Not a number {NaN}";
+    expected_res = "Caught an exception (std::invalid_argument): stoul";
+    try {
+        res << format(test_str, 0);
+    } catch(const std::invalid_argument& e) {
+        res << "Caught an exception (std::invalid_argument): " << e.what();
+    }
+    print_info(test_str, expected_res, res.str());
+    assert(res.str() == expected_res);
+    res.str(std::string());
+    
+    //Test 10. A string with an appeal to the argument index out of range
+    test_str = "A big number {99999999999999999999999999}";
+    expected_res = "Caught an exception (std::out_of_range): stoul";
+    try {
+        res << format(test_str, 0);
+    } catch(const std::out_of_range& e) {
+        res << "Caught an exception (std::out_of_range): " << e.what();
+    }
+    print_info(test_str, expected_res, res.str());
+    assert(res.str() == expected_res);
 }
 
 int main()
