@@ -38,4 +38,14 @@ test_str     = Only one argument {1}
 expected_res = Caught an exception (InvalidValue): Argument index out of range.
 res          = Caught an exception (InvalidValue): Argument index out of range.
 
+Test 9
+test_str     = Not a number {NaN}
+expected_res = Caught an exception (std::invalid_argument): stoul
+res          = Caught an exception (std::invalid_argument): stoul
+
+Test 10
+test_str     = A big number {99999999999999999999999999}
+expected_res = Caught an exception (std::out_of_range): stoul
+res          = Caught an exception (std::out_of_range): stoul
+
 All tests passed.
