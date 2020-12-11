@@ -43,8 +43,8 @@ std::string format(const std::string& str, const Args&... args)
             throw InvalidFormat("Unexpected opening brace.");
         }   
         res << str.substr(pos, opening_brace - pos);
-        int arg_num = stoi(str.substr(opening_brace + 1, closing_brace - 1 - opening_brace));
-        if (arg_num < 0 || static_cast<size_t>(arg_num) >= template_args.size()) {
+        size_t arg_num = std::stoul(str.substr(opening_brace + 1, closing_brace - 1 - opening_brace));
+        if (arg_num >= template_args.size()) {
             throw InvalidValue("Argument index out of range.");
         }
         res << template_args[arg_num];
