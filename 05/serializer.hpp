@@ -34,9 +34,9 @@ class Serializer
     template<class T, class... ArgsT>
     Error process(T&& val, ArgsT&&... args)
     {
-        if (process(val) == Error::NoError) {
+        if (process(std::forward<T>(val)) == Error::NoError) {
             out << Separator;
-            return process(args...);
+            return process(std::forward<ArgsT>(args)...);
         }
         return Error::CorruptedArchive;
     }
@@ -54,9 +54,9 @@ public:
     }
 
     template <class... ArgsT>
-    Error operator()(ArgsT... args)
+    Error operator()(ArgsT&&... args)
     {
-        return process(args...);
+        return process(std::forward<ArgsT>(args)...);
     }
 };
 
