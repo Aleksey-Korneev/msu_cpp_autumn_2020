@@ -91,7 +91,9 @@ class Deserializer
         input >> str;
         try {
             val = std::stoull(str);
-        } catch (const std::exception&) {
+        } catch (const std::invalid_argument&) {
+            return Error::CorruptedArchive;
+        } catch (const std::out_of_range&) {
             return Error::CorruptedArchive;
         }
         return Error::NoError;
