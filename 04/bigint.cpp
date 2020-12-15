@@ -37,7 +37,7 @@ BigInt::BigInt(const std::string& str)
     //A special string format designed in arithmetic operators
     if (std::count(str.begin(), str.end(), '\0') != static_cast<int>(str_size)) {
         for (size_t cnt = start; cnt < str_size; ++cnt) {
-            if (str[cnt] < '0' || str[cnt] > '9') {
+            if (!std::isdigit(str[cnt])) {
                 throw std::invalid_argument("Invalid argument in constructor from string");
             }
         }
