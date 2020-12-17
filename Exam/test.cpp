@@ -33,4 +33,5 @@ int main()
 
     SharedPtr<Test> x5(new Test());
     x5->print();
+    return 0;
 }
